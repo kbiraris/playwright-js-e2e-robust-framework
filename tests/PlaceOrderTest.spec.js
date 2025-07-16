@@ -2,7 +2,7 @@ const {test, expect} = require('@playwright/test');
 const {POManager} = require ('../pageobjects/POManager');
 const dataset = JSON.parse(JSON.stringify(require('../testdata/placeOrderTestData.json')));
 
-test.only('Client App login', async ({page})=> {
+test('Place order and verify in order history', async ({page})=> {
     
     const poManager = new POManager(page);  
     const loginPage = poManager.getLoginPage();

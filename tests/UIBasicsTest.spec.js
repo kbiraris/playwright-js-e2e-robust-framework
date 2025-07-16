@@ -10,29 +10,7 @@ test('First Playwright test', async ({browser})=>
 
 })
 
-test('Child window handle', async ({browser})=>
-{
-   const context = await browser.newContext();
-   const page = await context.newPage();
-   await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
-   const userName = page.locator('#username');
-   const documentLink = page.locator("[href*='document-request']");
-   
-   const [newPage] = await Promise.all(
-   [
-    context.waitForEvent('page'),
-    documentLink.click()
-   ])
-
-   console.log(await newPage.title());
-
-   await userName.fill('abc')
-
-
-   //await page.pause();
-})
-
-test.only('Client App login', async ({page})=> {
+test('Client App login', async ({page})=> {
     
     const userEmail = "birariskunal1@gmail.com";
     const email = page.locator('#userEmail');
