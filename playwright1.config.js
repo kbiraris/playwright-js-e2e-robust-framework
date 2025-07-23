@@ -4,8 +4,8 @@ import { permission } from "process";
 
 const config =
 ({
-  testDir: './tests',
-  retries:1,
+  testDir: './tests',         
+  retries: 1,                 
 
   timeout: 30*1000,
 
