@@ -5,10 +5,10 @@ const config = defineConfig({
   testDir: './tests',
 
   //  Retry mechanism - Number of retries on test failure
-  retries: 2,
+  retries: 1,
 
   // Global timeout per test, if a test runs longer, it will be forcefully stopped
-  timeout: 30 * 1000,
+  timeout: 20 * 1000,
 
   // Timeout for individual expect() assertions
   expect: {
@@ -21,27 +21,29 @@ const config = defineConfig({
   // Run tests in parallel across multiple browsers
   projects: [
     {
-      name: 'Chromium',
+      name: 'Chromium-iPhone-14',
       use: {
         browserName: 'chromium',
         headless: false,
         screenshot: 'retain-on-failure',
         video: 'retain-on-failure',
         trace: 'retain-on-failure',
+        ...devices['iPhone 14 Pro'], // Emulate iPhone 14 Pro 
       },
     },
     {
-      name: 'Firefox',
+      name: 'Firefox-iPad-Viewport',
       use: {
         browserName: 'firefox',
         headless: false,
         screenshot: 'retain-on-failure',
         video: 'retain-on-failure',
         trace: 'retain-on-failure',
+        viewport: { width: 1024, height: 1366 }, //Run the browser with a window size of 1024x1366 pixels
       },
     },
     {
-      name: 'WebKit',
+      name: 'WebKit-Headless',
       use: {
         browserName: 'webkit',
         headless: true,
