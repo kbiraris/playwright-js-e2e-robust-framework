@@ -1,5 +1,5 @@
-import { defineConfig, devices } from "@playwright/test";
-import { on } from "events";
+const { defineConfig, devices } = require('@playwright/test');
+const { on } = require('events');
 
 const config =
 ({

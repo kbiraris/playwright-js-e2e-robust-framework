@@ -1,6 +1,6 @@
-import { defineConfig, devices } from "@playwright/test";
-import { on } from "events";
-import { permission } from "process";
+const { defineConfig, devices } = require('@playwright/test');
+const { on } = require(events);
+const { permission } = require(process);
 
 const config =
 ({
@@ -34,10 +34,9 @@ const config =
             //video :'retain-on-failure',
             trace: 'retain-on-failure',
             //viewport:{width:720, height:720},
-            ...devices['iPhone 11'],
+            ...devices['iPhone 14 Pro'],
             ignoreHttpsErrors:true,
             permissions:['geolocation'],
-
           }
     }
   ]
